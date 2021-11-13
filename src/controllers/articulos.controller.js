@@ -11,6 +11,5 @@ export const getArticulos = async (req, res) => {
    // res.json(result.recordset[0].co_art[0]);
     //console.log(result.recordset[0]);
 
-    //ptrp cp,emtlskflaskf;
 };
 
