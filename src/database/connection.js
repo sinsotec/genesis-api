@@ -1,10 +1,12 @@
+import { config } from 'dotenv';
 import sql from 'mssql';
+import app from '../app.js';
 
 const dbSettings = {
-    server:"caracas1.pidigitalgroup.net", // "149.56.238.94",
+    server: process.env.SERVER,
     database:"DEMOA",
-    user:"profitdigital",
-    password:"634949Tsc..!",
+    user: "profitdigital",
+    password: process.env.PASS,
     options: {
         //encrypt: true,
         trustServerCertificate: true
@@ -19,4 +21,5 @@ export async function getConnection() {
         console.error(error);
     }
 };
+
 
