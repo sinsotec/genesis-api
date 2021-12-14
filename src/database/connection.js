@@ -5,7 +5,7 @@ import app from '../app.js';
 const dbSettings = {
     server: process.env.SERVER,
     database:"DEMOA",
-    user: "profitdigital",
+    user: process.env.USER,
     password: process.env.PASS,
     options: {
         //encrypt: true,
