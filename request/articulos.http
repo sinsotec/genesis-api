@@ -1,1 +1,10 @@
-GET http://localhost:3000/articulos
+@api = http://localhost:3000/
+GET http://localhost:3000/inventario?empresa=DEMOA
+
+###
+
+GET http://localhost:3000/ventas?empresa=AXN000183
+
+###
+
+GET http://localhost:3000/cajas?empresa=DAXSL1970

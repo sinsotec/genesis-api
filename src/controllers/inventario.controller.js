@@ -1,16 +1,17 @@
-//import { json } from "express";
 import { getConnection} from "../database/connection.js";
-import sql from 'mssql';
 
-export const getArticulos = async (req, res) => {
-    const pool = await getConnection();
-    
-    
+export const getInventario = async (req, res) => {
+    console.log(req.params);
+    console.log(req.query);
+    let empresa = req.query.empresa;
+    const pool = await getConnection(empresa);
     const result = await pool.request()
     .input("sCo_NivelStock", "MAY")
     .execute('RepStockArticulos');
+    pool.close();
    
     let articulos = [];
+    //let art = result.recordset; 
     result.recordset.forEach((articulo, index) =>{
             articulos.push({
                 'cod_art': articulo.co_art[0].trim(),
@@ -21,6 +22,7 @@ export const getArticulos = async (req, res) => {
     }); 
 
     res.json(articulos);
+    //res.json(art)
    // console.log(articulos.length);
     
 };
