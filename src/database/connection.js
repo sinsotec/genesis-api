@@ -1,16 +1,16 @@
 import { config } from 'dotenv';
 import sql from 'mssql';
-import app from '../app.js';
+import config from './config.js';
 
 //Pendiente probar pool de conexiones
 //Probar con sequalize
 
 
 const dbSettings = {
-    server: process.env.SERVER,
-    database: process.env.DB,
-    user: process.env.USUARIO,
-    password: process.env.PASS,
+    server: config.server,
+    database: config.database,
+    user: config.user,
+    password: config.password,
     options: {
         //encrypt: true,
         trustServerCertificate: true
