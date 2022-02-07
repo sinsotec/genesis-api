@@ -3,7 +3,7 @@ import { getConnection} from "../database/connection.js";
 export const getVentas = async (req, res) => {
     console.log(req.params);
     console.log(req.query);
-    let empresa = req.query.empresa;
+    const {empresa} = req.params;
     const pool = await getConnection(empresa);
     const result = await pool.request()
     //.input("CampOrderBy", "MAY")

@@ -7,11 +7,11 @@ import { getCajas } from "../controllers/cajas_bancos.controller";
 
 const router = Router();
 
-router.get('/inventario', getInventario);
+router.get('/inventario/:empresa', getInventario);
 
-router.get('/ventas', getVentas);
+router.get('/ventas/:empresa', getVentas);
 
-router.get('/cajas', getCajas);
+router.get('/cajas/:empresa', getCajas);
 
 
 
