@@ -1,6 +1,5 @@
-import { config } from 'dotenv';
 import sql from 'mssql';
-import config from './config.js';
+import config from '../config.js';
 
 //Pendiente probar pool de conexiones
 //Probar con sequalize
