@@ -7,4 +7,12 @@ GET http://localhost:3000/ventas/AXN000183
 
 ###
 
-GET http://localhost:3000/cajas/DAXSL1970
+GET http://localhost:3000/ventas/DAXSL1970
+
+###
+
+GET http://localhost:3000/cxc/DAXSL1970
+
+###
+
+GET http://localhost:3000/clientes/DAXSL1970
