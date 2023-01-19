@@ -10,6 +10,9 @@ const dbSettings = {
     database: config.database,
     user: config.user,
     password: config.password,
+    pool: {
+        idleTimeoutMillis: 30000
+        },
     options: {
         //encrypt: true,
         trustServerCertificate: true
@@ -19,7 +22,9 @@ const dbSettings = {
 export async function getConnection(empresa) {
     try {
         dbSettings.database = empresa;
-        const pool = await sql.connect(dbSettings);
+        //const pool = sql.connect(dbSettings);
+        const pool = new sql.ConnectionPool(dbSettings).connect();
+
         return pool;
     } catch (error) {
         console.error(error);
